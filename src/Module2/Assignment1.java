@@ -1,13 +1,19 @@
 package Module2;
 
 
-public class Assignment1 {
-    public static int main(String[] args) {
-        int[] ArraySum = {6, 55, 18, 9, 15, 42, 77, 32, 98, 100};
-        int sum = 0;
-        for (int i = 0; i < ArraySum.length; i++) {
-            sum += ArraySum[i];
-        }
+import java.util.Arrays;
 
-    }
-}
+public class Assignment1 {
+    public static void main(String[] args) {
+        int[] arraySum = {3208, 2098, 3547, 4453, 8798, 9922, 1211, 9657, 4456, 3214};
+        int sum = 0;
+        int i;
+        for (i = 0; i < arraySum.length; i++)
+        sum += arraySum[i];
+        System.out.println("Sum is"+sum);
+
+        
+
+        }}
+
+
