@@ -63,6 +63,29 @@ public class Assignment1 {
         }
     //max positive of int and double
 
+    static int arrayMaxPositive(int[]array){
+        int maxPositive=array[0];
+        for(int i=0;i<array.length;i++){
+            if (array[i]>maxPositive){
+                maxPositive=array[i];}
+        }
+        return maxPositive;
+    }
+
+    static double arrayMaxPositive1(double[]array1){
+        double maxPositive1=array1[0];
+        for(int i=0;i<array1.length;i++){
+            if(array1[i]>maxPositive1){
+                maxPositive1=array1[i];}
+        }
+        return maxPositive1;
+    }
+//modulus of first and last element
+
+    static int modulus(int[]array){
+       int modulus=array[0]%array.length;
+       return modulus;
+    }
 
 
 
@@ -78,7 +101,9 @@ public class Assignment1 {
         System.out.println("double min is"+arrayMin1(array1));
         System.out.println("Int max is"+arrayMax(array));
         System.out.println("Double max is"+arrayMax1(array1));
-
+        System.out.println("Int max positive is"+arrayMaxPositive(array));
+        System.out.println("Double max positive is"+arrayMaxPositive1(array1));
+        System.out.println("Int first and last modulus are"+modulus(array));
     }
 }
 
