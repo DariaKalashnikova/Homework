@@ -8,14 +8,14 @@ public class Assignment1 {
 
        //calculate sum of int and double
 
-        static int arraySum(int[] array) {
+        static int sum(int[] array) {
           int sum=0;
           for (int i=0; i<array.length;i++){
               sum+=array[i];}
               return sum;
       }
 
-      static double arraySum1(double[]array1){
+      static double sum(double[]array1){
           double sum=0;
           for(double arrayItem:array1){
               sum+=arrayItem;}
@@ -24,7 +24,7 @@ public class Assignment1 {
 
       //calculate min of int and double
 
-    static int arrayMin(int[]array){
+    static int min(int[]array){
         int min=array[0];
         for( int i=0; i<array.length;i++){
             if(array[i]<min){
@@ -33,7 +33,7 @@ public class Assignment1 {
         return min;
     }
 
-    static double arrayMin1(double[]array1){
+    static double min(double[]array1){
         double min=array1[0];
         for (int i=0; i<array1.length;i++){
             if (array1[i]<min){
@@ -44,7 +44,7 @@ public class Assignment1 {
 
     // calculate max of int and double
 
-    static int arrayMax(int[]array){
+    static int max(int[]array){
         int max=array[0];
         for(int i=0;i<array.length;i++){
             if(array[i]>max){
@@ -53,7 +53,7 @@ public class Assignment1 {
             return max;
         }
 
-    static double arrayMax1(double[]array1){
+    static double max(double[]array1){
         double max=array1[0];
         for(int i=0;i<array1.length;i++){
             if (array1[i]>max){
@@ -63,28 +63,33 @@ public class Assignment1 {
         }
     //max positive of int and double
 
-    static int arrayMaxPositive(int[]array){
-        int maxPositive=array[0];
-        for(int i=0;i<array.length;i++){
-            if (array[i]>maxPositive){
-                maxPositive=array[i];}
+    static public void maxPositive(int[]array) {
+        int maxPositive = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxPositive) {
+                maxPositive = array[i];
+            }
         }
-        if(maxPositive>0);
-        return maxPositive;
+        if (maxPositive > 0){
+            System.out.println("Int max positive is "+maxPositive);
+        } else System.out.println("no positive elements in the array");
+
     }
 
-    static double arrayMaxPositive1(double[]array1){
+    static public void maxPositive(double[] array1){
         double maxPositive1=array1[0];
         for(int i=0;i<array1.length;i++){
             if(array1[i]>maxPositive1){
                 maxPositive1=array1[i];}
         }
-        if(maxPositive1>0);
-        return maxPositive1;
+        if (maxPositive1 > 0){
+            System.out.println("Double max positive is "+maxPositive1);
+        } else System.out.println("no positive elements in the array");
+
     }
     //multiplication
 
-    static int arrayMult(int[]array){
+    static int multiplication(int[]array){
         int arrayMult=1;
         for(int i=0;i<array.length;i++){
             arrayMult=arrayMult*array[i];
@@ -92,7 +97,7 @@ public class Assignment1 {
             return arrayMult;
     }
 
-    static double arrayMult1(double[]array1){
+    static double multiplication(double[]array1){
         double arrayMult1=1;
         for(int i=0;i<array1.length;i++){
             arrayMult1=arrayMult1*array1[i];
@@ -103,19 +108,17 @@ public class Assignment1 {
 //modulus of first and last element
 
     static int modulus(int[]array){
-       int modulus=array[0]%array.length-1;
-       return modulus;
+       return array[0]%array.length-1;
     }
 
-    static double modulus1(double[]array1){
-        double modulus1=array1[0]%array1.length-1;
-        return modulus1;
+    static double modulus(double[]array1){
+        return array1[0]%array1.length-1;
     }
 
 //second largest element
 
     static int secondLargest(int[]array){
-        int max=arrayMax(array);
+        int max=max(array);
         int second=array[0];
         for(int i=0;i<array.length;i++){
             if(array[i]>second&&array[i]<max)
@@ -125,7 +128,7 @@ public class Assignment1 {
     }
 
     static double secondLargest1(double[]array1){
-        double max=arrayMax1(array1);
+        double max=max(array1);
         double second1=0;
         for(double item:array1){
             if(item>second1&&item<max)
@@ -142,20 +145,20 @@ public class Assignment1 {
 
 
     public static void main(String[] args) {
-        System.out.println("Int sum is"+ arraySum(array));
-        System.out.println("Double sum is"+ arraySum1(array1));
-        System.out.println("Int min is"+ arrayMin(array));
-        System.out.println("double min is"+ arrayMin1(array1));
-        System.out.println("Int max is"+ arrayMax(array));
-        System.out.println("Double max is"+ arrayMax1(array1));
-        System.out.println("Int max positive is"+ arrayMaxPositive(array));
-        System.out.println("Double max positive is"+ arrayMaxPositive1(array1));
-        System.out.println("Int multiplication is"+ arrayMult(array));
-        System.out.println("Double multiplication is"+ arrayMult1(array1));
-        System.out.println("Int modulus is"+ modulus(array));
-        System.out.println("Double modulus is"+ modulus1(array1));
-        System.out.println("Int second largest element is"+ secondLargest(array));
-        System.out.println("Double second largest element is"+ secondLargest1(array1));
+        System.out.println("Int sum is "+ sum(array));
+        System.out.println("Double sum is  "+ sum(array1));
+        System.out.println("Int min is "+ min(array));
+        System.out.println("double min is "+ min(array1));
+        System.out.println("Int max is "+ max(array));
+        System.out.println("Double max is "+ max(array1));
+        maxPositive(array);
+        maxPositive(array1);
+        System.out.println("Int multiplication is "+ multiplication(array));
+        System.out.println("Double multiplication is "+ multiplication(array1));
+        System.out.println("Int modulus is "+ modulus(array));
+        System.out.println("Double modulus is "+ modulus(array1));
+        System.out.println("Int second largest element is "+ secondLargest(array));
+        System.out.println("Double second largest element is "+ secondLargest1(array1));
     }
 }
 
