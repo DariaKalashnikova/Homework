@@ -11,7 +11,7 @@ public class Assignment2 {
         double withdrawl=520;
         double commission=0.05;
 
-        double balanceAfter=accountWithdraw(980,520,0.05);
+        double balanceAfter=accountWithdraw(balance,withdrawl,commission);
         if(balanceAfter>=0){
             System.out.println("OK");
             System.out.println(balanceAfter+""+commission);
