@@ -2,21 +2,20 @@ package Module2;
 
 public class Assignment2 {
 
-    static double accountWithdraw(double balance,double withdrawl, double commision){
-        return balance-withdrawl-withdrawl*commision;
+    static double accountWithdraw(double balance, double withdrawl, double commision) {
+        return balance - withdrawl - withdrawl * commision;
     }
 
     public static void main(String[] args) {
-        double balance=980;
-        double withdrawl=520;
-        double commission=0.05;
+        double balance = 980;
+        double withdrawl = 520;
+        double commission = 0.05;
 
-        double balanceAfter=accountWithdraw(balance,withdrawl,commission);
-        if(balanceAfter>=0){
+        double balanceAfter = accountWithdraw(balance, withdrawl, commission);
+        if (balanceAfter >= 0) {
             System.out.println("OK");
-            System.out.println(balanceAfter+""+commission);
-        }
-        else {
+            System.out.println(balanceAfter + "" + commission);
+        } else {
             System.out.println("no");
         }
     }
