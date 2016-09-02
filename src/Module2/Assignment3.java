@@ -15,16 +15,26 @@ public class Assignment3 {
             }
         int balance = balances[index];
         return balance - withdraw - withdraw * commision;
+
     }
 
     public static void main(String[] args) {
+        String ownerNames = "Patrik";
+        int withdraw = 500;
 
-        String ownerName = "Patrik";
-        double withdraw = 500;
+        if (withdraw >= 0) {
+            System.out.println(ownerNames + withdraw + balances);
+        } else {
+            System.out.println(ownerNames + "No");
+        }
 
-        System.out.println(ownerName + balances);
     }
+
+
 }
+
+
+
 
 
 
