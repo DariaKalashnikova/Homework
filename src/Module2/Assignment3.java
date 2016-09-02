@@ -3,35 +3,41 @@ package Module2;
 
 public class Assignment3 {
 
-    static int[] balances = {680, 250, 995, 845, 312};
-    static String[] ownerNames = {"John", "Jack", "Jill", "Patrik", "Bob"};
-    double commision = 0.05;
-
-    static double balance(double withdraw, String[] ownerNames, double commision) {
-        int index = 0;
-        for (int i = 0; i < ownerNames.length; i++)
-            if (ownerNames.equals(ownerNames[i])) {
-                index = i;
-            }
-        int balance = balances[index];
-        return balance - withdraw - withdraw * commision;
-
-    }
-
     public static void main(String[] args) {
-        String ownerNames = "Patrik";
-        int withdraw = 500;
+        String[] ownerNames = {"Bob", "Patrik", "Sqidward", "Krabs", "Sandy"};
+        int[] balances = {350, 500, 700, 10000, 5000};
+        double commision = 0.05;
 
-        if (withdraw >= 0) {
-            System.out.println(ownerNames + withdraw + balances);
-        } else {
-            System.out.println(ownerNames + "No");
-        }
+        String ownerName = "Bob";
+        double withdraw = 350;
+
+        String ownerName1 = "Sandy";
+        double withdraw1 = 800;
+
+        transaction(ownerNames, ownerName, balances, withdraw, commision);
+        transaction(ownerNames, ownerName1, balances, withdraw1, commision);
 
     }
 
+    static void transaction(String ownerNames[], String ownerName, int balances[], double withdraw, double commision) {
 
+        for (int i = 0; i < ownerNames.length; i++) {
+            if (ownerNames[i].equals(ownerName)) {
+                if (balances[i] - withdraw - commision > 0) {
+                    balances[i] = (int) (balances[i] - withdraw - withdraw*commision);
+                    System.out.println(ownerNames[i] + " " + withdraw + " balance left " + balances[i]);
+                } else {
+                    System.out.println(ownerNames[i] + " No ");
+                }
+            }
+        }
+    }
 }
+
+
+
+
+
 
 
 
