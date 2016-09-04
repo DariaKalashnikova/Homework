@@ -3,10 +3,11 @@ package Module3.BirdDefinition;
 
 public class Animal {
 
-    void walk(){
+    void walk() {
         System.out.println("I am walking");
     }
-    void fly(){
+
+    void fly() {
         System.out.println("I am flying");
     }
 }
