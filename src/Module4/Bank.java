@@ -1,8 +1,6 @@
 package Module4;
 
 
-import java.util.Currency;
-
 public abstract class Bank {
 
     long id;
@@ -47,6 +45,11 @@ public abstract class Bank {
         this.currency = currency;
     }
 
+    @Override
+    public String toString() {
+        return "Bank{" + "currency" + currency + '}';
+    }
+
     public int getNumberOfEmployees() {
         return numberOfEmployees;
     }
@@ -83,9 +86,9 @@ public abstract class Bank {
 
     abstract int getLimitOfFunding();
 
-    abstract int getMonthlyRate();
+    abstract double getMonthlyRate();
 
-    abstract int getCommision(int summ);
+    abstract double getCommision(int summ);
 
     double moneyPaidMonthlyForSalary() {
         return 0;
