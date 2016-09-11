@@ -70,9 +70,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id: " + id + "name: " + name + ":" + "balance: " + balance +
-                "(" + "months of employment: " + monthsOfEmployment + "company name: " + companyName +
-                ") " + "salary: " + salary + "bank: " + bank + "}";
+        return "User{" + "id: " + id + "name: " + name + " : " + " balance: " + balance +
+                "(" + " months of employment: " + monthsOfEmployment + " company name: " + companyName +
+                ") " + " salary: " + salary + " bank: " + bank + "}";
 
     }
 }
