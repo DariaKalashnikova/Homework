@@ -6,9 +6,9 @@ public class BankSystemImpl implements BankSystem {
     public void withdrawOfUser(User user, int amount) {
         Bank bankUser = user.getBank();
         if (amount > user.getBalance()) {
-            System.out.println("You have exceeded your limit");
+            System.out.println(" You have exceeded your limit");
         } else if (amount > bankUser.getLimitOfWithdrawal()) {
-            System.out.println("You have exceeded your limit of withdrawal, as for now your limit is: " + bankUser.getLimitOfWithdrawal());
+            System.out.println(" You have exceeded your limit of withdrawal, as for now your limit is: " + bankUser.getLimitOfWithdrawal());
         } else {
             user.setBalance(user.getBalance() - amount - bankUser.getCommision(amount));
         }
@@ -19,7 +19,7 @@ public class BankSystemImpl implements BankSystem {
     public void fundUser(User user, int amount) {
         Bank bankUser = user.getBank();
         if (amount >= bankUser.getLimitOfFunding()) {
-            System.out.println("You can't replenish your account, your limit is:" + bankUser.getLimitOfFunding());
+            System.out.println(" You can't replenish your account, your limit is:" + bankUser.getLimitOfFunding());
         } else {
             user.setBalance(user.getBalance() + amount - bankUser.getCommision(amount));
         }

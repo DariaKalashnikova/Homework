@@ -32,8 +32,7 @@ public class User {
     }
 
     public void setBalance(double balance) {
-        this.balance = balance;
-    }
+        this.balance = balance;}
 
     public int getMonthsOfEmployment() {
         return monthsOfEmployment;
@@ -70,7 +69,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id: " + id + "name: " + name + " : " + " balance: " + balance +
+        return "User{" + "id: " + id + " name: " + name + " : " + " balance: " + String.format("%2f", balance) +
                 "(" + " months of employment: " + monthsOfEmployment + " company name: " + companyName +
                 ") " + " salary: " + salary + " bank: " + bank + "}";
 

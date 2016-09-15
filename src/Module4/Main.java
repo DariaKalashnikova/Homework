@@ -60,13 +60,13 @@ public class Main {
         userhuaXia.setId(98452);
 
         User userbankOfChina = new User();
-       userbankOfChina.setName("Luna");
-       userbankOfChina.setBalance(5551);
-       userbankOfChina.setMonthsOfEmployment(22);
-       userbankOfChina.setCompanyName("PiuPiu");
-       userbankOfChina.setSalary(2541);
-       userbankOfChina.setBank(bankOfChina);
-       userbankOfChina.setId(1474);
+        userbankOfChina.setName("Luna");
+        userbankOfChina.setBalance(5551);
+        userbankOfChina.setMonthsOfEmployment(22);
+        userbankOfChina.setCompanyName("PiuPiu");
+        userbankOfChina.setSalary(2541);
+        userbankOfChina.setBank(bankOfChina);
+        userbankOfChina.setId(1474);
 
         bankSystemImpl.withdrawOfUser(userbankOfAmerica, 50);
         bankSystemImpl.withdrawOfUser(usercitibank, 300);
@@ -86,8 +86,8 @@ public class Main {
         bankSystemImpl.paySalary(userpirarus);
         bankSystemImpl.paySalary(userjyske);
 
-        bankSystemImpl.withdrawOfUser(userhuaXia, 800);
-        bankSystemImpl.withdrawOfUser(userbankOfChina, 970);
+        bankSystemImpl.withdrawOfUser(userhuaXia, 50);
+        bankSystemImpl.withdrawOfUser(userbankOfChina, 90);
         bankSystemImpl.fundUser(userhuaXia, 100);
         bankSystemImpl.fundUser(userbankOfChina, 250);
         bankSystemImpl.transferMoney(userbankOfChina, userhuaXia, 280);
