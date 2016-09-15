@@ -1,7 +1,5 @@
-package Module3.BirdDefinition;
+package Module3.birdDefinition;
 
-
-import Module3.BirdDefinition.Animal;
 
 public class Bird extends Animal {
     void sing() {
@@ -10,5 +8,9 @@ public class Bird extends Animal {
 
     void name() {
         System.out.println("I am Bird");
+    }
+
+    void fly() {
+        System.out.println("I am flying");
     }
 }

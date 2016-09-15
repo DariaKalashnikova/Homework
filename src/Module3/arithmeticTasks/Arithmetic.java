@@ -1,4 +1,4 @@
-package Module3.ArithmeticTasks;
+package Module3.arithmeticTasks;
 
 
 public class Arithmetic {

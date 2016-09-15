@@ -1,7 +1,5 @@
-package Module3.ArithmeticTasks;
+package Module3.arithmeticTasks;
 
-
-import Module3.ArithmeticTasks.Adder;
 
 public class Main {
 

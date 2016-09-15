@@ -1,4 +1,4 @@
-package Module3.UniversityDataBase;
+package Module3.universityDataBase;
 
 
 public class Student {

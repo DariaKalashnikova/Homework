@@ -1,4 +1,4 @@
-package Module3.Task4;
+package Module3.task4;
 
 public class User {
 

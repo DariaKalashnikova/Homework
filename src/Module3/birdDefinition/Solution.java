@@ -1,7 +1,5 @@
-package Module3.BirdDefinition;
+package Module3.birdDefinition;
 
-
-import Module3.BirdDefinition.Bird;
 
 public class Solution {
     public static void main(String[] args) {
