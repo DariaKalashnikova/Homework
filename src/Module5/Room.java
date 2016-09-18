@@ -69,4 +69,29 @@ public class Room {
         this.hotelName = hotelName;
         this.cityName = cityName;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Room room = (Room) o;
+
+        if (price != 0) {
+            if (price != room.price) return false;
+        }
+        if (persons != room.persons) return false;
+        if (cityName != null) {
+            if (!cityName.equals(room.cityName)) ;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + cityName.hashCode();
+        return result;
+    }
 }
