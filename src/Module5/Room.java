@@ -36,7 +36,7 @@ public class Room {
         this.persons = persons;
     }
 
-    public Date getDateAvailableFrom() {
+    public Date getDateAvailableFrom (int year,int month, int date) {
         return dateAvailableFrom;
     }
 
