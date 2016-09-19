@@ -68,7 +68,7 @@ public class Main {
         userbankOfChina.setBank(bankOfChina);
         userbankOfChina.setId(1474);
 
-        bankSystemImpl.withdrawOfUser(userbankOfAmerica, 50);
+        bankSystemImpl.withdrawOfUser(userbankOfAmerica, 150);
         bankSystemImpl.withdrawOfUser(usercitibank, 300);
         bankSystemImpl.fundUser(userbankOfAmerica, 420);
         bankSystemImpl.fundUser(usercitibank, 120);
@@ -86,8 +86,8 @@ public class Main {
         bankSystemImpl.paySalary(userpirarus);
         bankSystemImpl.paySalary(userjyske);
 
-        bankSystemImpl.withdrawOfUser(userhuaXia, 50);
-        bankSystemImpl.withdrawOfUser(userbankOfChina, 90);
+        bankSystemImpl.withdrawOfUser(userhuaXia, 250);
+        bankSystemImpl.withdrawOfUser(userbankOfChina, 190);
         bankSystemImpl.fundUser(userhuaXia, 100);
         bankSystemImpl.fundUser(userbankOfChina, 250);
         bankSystemImpl.transferMoney(userbankOfChina, userhuaXia, 280);
@@ -101,5 +101,6 @@ public class Main {
         System.out.println(userjyske.toString());
         System.out.println(userhuaXia.toString());
         System.out.println(userbankOfChina.toString());
+
     }
 }
