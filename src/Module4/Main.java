@@ -12,7 +12,6 @@ public class Main {
         Bank huaXia = new ChinaBank(212356, "China", Currency.EUR, 900, 8520, 15, 2005480001);
         Bank bankOfChina = new ChinaBank(145876, "China", Currency.USD, 600, 7350, 11, 400587321);
 
-        BankSystemImpl bankSystemImpl = new BankSystemImpl();
 
         User userbankOfAmerica = new User();
         userbankOfAmerica.setName("Harvey");
@@ -68,32 +67,34 @@ public class Main {
         userbankOfChina.setBank(bankOfChina);
         userbankOfChina.setId(1474);
 
-        bankSystemImpl.withdrawOfUser(userbankOfAmerica, 150);
-        bankSystemImpl.withdrawOfUser(usercitibank, 300);
-        bankSystemImpl.fundUser(userbankOfAmerica, 420);
-        bankSystemImpl.fundUser(usercitibank, 120);
-        bankSystemImpl.transferMoney(userbankOfAmerica, usercitibank, 300);
-        bankSystemImpl.transferMoney(usercitibank, userbankOfAmerica, 745);
-        bankSystemImpl.paySalary(userbankOfAmerica);
-        bankSystemImpl.paySalary(usercitibank);
+        BankSystem bankSystem = new BankSystemImpl();
 
-        bankSystemImpl.withdrawOfUser(userpirarus, 120);
-        bankSystemImpl.withdrawOfUser(userjyske, 900);
-        bankSystemImpl.fundUser(userpirarus, 358);
-        bankSystemImpl.fundUser(userjyske, 654);
-        bankSystemImpl.transferMoney(userpirarus, userjyske, 854);
-        bankSystemImpl.transferMoney(userjyske, userpirarus, 380);
-        bankSystemImpl.paySalary(userpirarus);
-        bankSystemImpl.paySalary(userjyske);
+        bankSystem.withdrawOfUser(userbankOfAmerica, 150);
+        bankSystem.withdrawOfUser(usercitibank, 300);
+        bankSystem.fundUser(userbankOfAmerica, 420);
+        bankSystem.fundUser(usercitibank, 120);
+        bankSystem.transferMoney(userbankOfAmerica, usercitibank, 300);
+        bankSystem.transferMoney(usercitibank, userbankOfAmerica, 745);
+        bankSystem.paySalary(userbankOfAmerica);
+        bankSystem.paySalary(usercitibank);
 
-        bankSystemImpl.withdrawOfUser(userhuaXia, 250);
-        bankSystemImpl.withdrawOfUser(userbankOfChina, 190);
-        bankSystemImpl.fundUser(userhuaXia, 100);
-        bankSystemImpl.fundUser(userbankOfChina, 250);
-        bankSystemImpl.transferMoney(userbankOfChina, userhuaXia, 280);
-        bankSystemImpl.transferMoney(userhuaXia, userbankOfChina, 400);
-        bankSystemImpl.paySalary(userbankOfChina);
-        bankSystemImpl.paySalary(userhuaXia);
+        bankSystem.withdrawOfUser(userpirarus, 120);
+        bankSystem.withdrawOfUser(userjyske, 900);
+        bankSystem.fundUser(userpirarus, 358);
+        bankSystem.fundUser(userjyske, 654);
+        bankSystem.transferMoney(userpirarus, userjyske, 854);
+        bankSystem.transferMoney(userjyske, userpirarus, 380);
+        bankSystem.paySalary(userpirarus);
+        bankSystem.paySalary(userjyske);
+
+        bankSystem.withdrawOfUser(userhuaXia, 250);
+        bankSystem.withdrawOfUser(userbankOfChina, 190);
+        bankSystem.fundUser(userhuaXia, 100);
+        bankSystem.fundUser(userbankOfChina, 250);
+        bankSystem.transferMoney(userbankOfChina, userhuaXia, 280);
+        bankSystem.transferMoney(userhuaXia, userbankOfChina, 400);
+        bankSystem.paySalary(userbankOfChina);
+        bankSystem.paySalary(userhuaXia);
 
         System.out.println(userbankOfAmerica.toString());
         System.out.println(usercitibank.toString());
