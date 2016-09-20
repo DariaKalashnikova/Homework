@@ -12,6 +12,16 @@ public class Room {
     String hotelName;
     String cityName;
 
+    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+
+        this.id = id;
+        this.price = price;
+        this.persons = persons;
+        this.dateAvailableFrom = dateAvailableFrom;
+        this.hotelName = hotelName;
+        this.cityName = cityName;
+    }
+
     public long getId() {
         return id;
     }
@@ -36,7 +46,7 @@ public class Room {
         this.persons = persons;
     }
 
-    public Date getDateAvailableFrom (int year,int month, int date) {
+    public Date getDateAvailableFrom() {
         return dateAvailableFrom;
     }
 
@@ -60,16 +70,6 @@ public class Room {
         this.cityName = cityName;
     }
 
-    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
-
-        this.id = id;
-        this.price = price;
-        this.persons = persons;
-        this.dateAvailableFrom = dateAvailableFrom;
-        this.hotelName = hotelName;
-        this.cityName = cityName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,8 +81,9 @@ public class Room {
             if (price != room.price) return false;
         }
         if (persons != room.persons) return false;
+        if (!hotelName.equals(room.hotelName)) return false;
         if (cityName != null) {
-            if (!cityName.equals(room.cityName)) ;
+            if (cityName.equals(room.cityName)) ;
         }
         return false;
     }
@@ -91,6 +92,7 @@ public class Room {
     public int hashCode() {
         int result = price;
         result = 31 * result + persons;
+        result = 31 * result + hotelName.hashCode();
         result = 31 * result + cityName.hashCode();
         return result;
     }
