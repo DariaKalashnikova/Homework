@@ -6,7 +6,7 @@ public class BookingComAPI implements API {
     private Room[] rooms = new Room[5];
 
     public BookingComAPI() {
-        Room room1 = new Room(102030, 150, 2, new Date(20162012), "Raddison", "Kiev");
+        Room room1 = new Room(102030, 150, 2, new Date(20161012), "Raddison", "Kiev");
         rooms[0] = room1;
         Room room2 = new Room(223310, 100, 1, new Date(20161010), "Hilton", "Prague");
         rooms[1] = room2;
