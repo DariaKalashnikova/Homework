@@ -10,7 +10,7 @@ public class TripAdvisorAPI implements API {
     public TripAdvisorAPI() {
         Room room1 = new Room(444555, 100, 2, new Date(20161212), "Feather", "Wonderland");
         rooms[0] = room1;
-        Room room2 = new Room(5557852, 125, 5, new Date(20170102), "BikiniPines", "Bikini Bottom");
+        Room room2 = new Room(223310, 100, 1, new Date(20161010), "Hilton", "Prague");
         rooms[1] = room2;
         Room room3 = new Room(22211, 220, 3, new Date(20180215), "Joey's", "Waynward Pines");
         rooms[2] = room3;
@@ -24,7 +24,14 @@ public class TripAdvisorAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String cityName, String hotelName) {
-        return new Room[0];
+
+        Room[] roomFound = new Room[rooms.length];
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i].getCityName().equals(cityName) && rooms[i].getPersons() == persons && rooms[i].getPrice() == price) {
+                roomFound[i] = rooms[i];
+            }
+        }
+        return roomFound;
     }
 
     @Override

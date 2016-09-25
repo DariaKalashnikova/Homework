@@ -1,27 +1,25 @@
 package Module5;
 
 
-public class Controller implements API {
+public class Controller {
 
-    private API arraysOfApis[] = new API[3];
+    private API[] apis = new API[3];
 
-    public Controller(){
+    public Controller() {
         BookingComAPI bookingComAPI = new BookingComAPI();
-        arraysOfApis[0]=bookingComAPI;
+        apis[0] = bookingComAPI;
+        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
+        apis[1] = tripAdvisorAPI;
+        GoogleAPI googleAPI = new GoogleAPI();
+        apis[2] = googleAPI;
     }
 
-    @Override
-    public Room[] findRooms(int price, int persons, String cityName, String hotelName) {
-        return new Room[0];
-    }
+    public Room[] requestRoom(int price, int persons, String hotelName, String cityName) {
+        Room[] bookingCom = apis[0].findRooms(price, persons, cityName, hotelName);
+        Room[] tripAdvisor = apis[1].findRooms(price, persons, cityName, hotelName);
+        Room[] google = apis[2].findRooms(price, persons, cityName, hotelName);
 
-    @Override
-    public Room[] getAll() {
-        return new Room[0];
-    }
-
-    private Room[] requestRooms(int price, int persons, String city, String hotelName) {
-        return new Room[0];
+        Room[] rooms = new Room[bookingCom.length + tripAdvisor.length + google.length];
     }
 }
 
