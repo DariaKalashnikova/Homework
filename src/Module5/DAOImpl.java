@@ -29,8 +29,4 @@ public class DAOImpl implements DAO {
         return room;
     }
 
-    @Override
-    public Room[] getAll() {
-        return new Room[0];
-    }
 }
