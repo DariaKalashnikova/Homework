@@ -2,20 +2,58 @@ package Module6;
 
 public class UserUtils {
 
-    User[] uniqueUsers (User[] users){
+    User[] uniqueUsers(User[] users) {
+        User[] uniqueUsers = new User[users.length];
+        System.arraycopy(users, 0, uniqueUsers, 0, users.length);
+        for (int i = 0; i < uniqueUsers.length; i++) {
+            for (int k = 0; k < uniqueUsers.length; k++) {
+                if (i == k) {
+                    k++;
+                }
+                if (k == uniqueUsers.length)
+                    break;
+                if (uniqueUsers[i] == null || uniqueUsers[k] == null) {
+                    continue;
+                }
+                if (uniqueUsers[i].equals(uniqueUsers[k])) {
+                    uniqueUsers[k] = null;
+                }
+            }
+        }
 
+        return uniqueUsers;
+    }
+
+    User[] usersWithContitionalBalance(User[] users, int balance) {
+        User[] conditionalBalance = new User[users.length];
+        for (int i = 0; i < users.length; i++) {
+            if (conditionalBalance[i].getBalance() == balance) {
+            }
+        }
+
+        return conditionalBalance;
+    }
+
+    final User[] paySalaryToUsers(User[] users) {
+        for (int i = 0; i < users.length; i++) {
+            users[i].setBalance(users[i].getBalance() + users[i].getSalary());
+        }
         return users;
     }
-    User[] usersWithContitionalBalance (User[] users, int balance){
-        return users;
+
+    final long[] getUsersId(User[] users) {
+        long[] usersId = new long[users.length];
+        for (int i = 0; i < usersId.length; i++) {
+            usersId[i] = users[i].getId();
+        }
+        return usersId;
     }
-    final User[] paySalaryToUsers (User[] users){
-        return users;
-    }
-    final long[] getUsersId (User[] users){
-        return getUsersId(users);
-    }
-    User[] deleteEmptyUsers (User[] users){
-        return users;
+
+    User[] deleteEmptyUsers(User[] users) {
+        User[] emptyUsers = new User[users.length];
+        for (int i = 0; i < emptyUsers.length; i++) {
+            if (emptyUsers[i].equals(users[i])) ;
+        }
+        return emptyUsers;
     }
 }
