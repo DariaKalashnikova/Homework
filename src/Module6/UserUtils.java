@@ -28,7 +28,7 @@ public class UserUtils {
         User[] conditionalBalance = new User[users.length];
         for (int i = 0; i < users.length; i++) {
             if (users[i].getBalance() == balance) {
-                conditionalBalance[i]=users[i];
+                conditionalBalance[i] = users[i];
             }
         }
         return conditionalBalance;
@@ -54,9 +54,9 @@ public class UserUtils {
         User[] emptyUsers = new User[users.length];
         User empty = new User();
         for (int i = 0; i < users.length; i++) {
-            if (users[i].equals(empty)) ;
-            continue;
-            emptyUsers[i]=users[i];
+            if (users[i].equals(empty))
+                continue;
+            emptyUsers[i] = users[i];
         }
         return emptyUsers;
     }
