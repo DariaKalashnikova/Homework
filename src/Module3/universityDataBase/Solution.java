@@ -9,7 +9,6 @@ public class Solution {
 
         Date date = new Date(1994);
 
-
         Course anthropology = new Course("Dexter", 550, "Pretzel");
         Course history = new Course(date, "Hans");
         Course[] courses = {anthropology, history};

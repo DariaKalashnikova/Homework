@@ -144,7 +144,6 @@ public class Assignment1 {
         return second1;
     }
 
-
     public static void main(String[] args) {
         System.out.println("Int sum is " + sum(array));
         System.out.println("Double sum is  " + sum(array1));

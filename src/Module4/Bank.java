@@ -45,11 +45,6 @@ public abstract class Bank {
         this.currency = currency;
     }
 
-    @Override
-    public String toString() {
-        return "Bank{" + "currency" + currency + '}';
-    }
-
     public int getNumberOfEmployees() {
         return numberOfEmployees;
     }
@@ -92,5 +87,11 @@ public abstract class Bank {
 
     double moneyPaidMonthlyForSalary() {
         return 0;
+    }
+
+    @Override
+
+    public String toString() {
+        return "Bank{" + "currency" + currency + '}';
     }
 }

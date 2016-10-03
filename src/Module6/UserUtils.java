@@ -27,10 +27,10 @@ public class UserUtils {
     User[] usersWithContitionalBalance(User[] users, int balance) {
         User[] conditionalBalance = new User[users.length];
         for (int i = 0; i < users.length; i++) {
-            if (conditionalBalance[i].getBalance() == balance) {
+            if (users[i].getBalance() == balance) {
+                conditionalBalance[i]=users[i];
             }
         }
-
         return conditionalBalance;
     }
 
@@ -40,6 +40,7 @@ public class UserUtils {
         }
         return users;
     }
+
 
     final long[] getUsersId(User[] users) {
         long[] usersId = new long[users.length];
@@ -51,8 +52,11 @@ public class UserUtils {
 
     User[] deleteEmptyUsers(User[] users) {
         User[] emptyUsers = new User[users.length];
-        for (int i = 0; i < emptyUsers.length; i++) {
-            if (emptyUsers[i].equals(users[i])) ;
+        User empty = new User();
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].equals(empty)) ;
+            continue;
+            emptyUsers[i]=users[i];
         }
         return emptyUsers;
     }
