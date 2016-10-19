@@ -20,7 +20,7 @@ public class Main {
         User user9 = new User(10, "Dolly", "Kim", "Chicago", 10000);
         User user10 = new User(2, "Thor", "Odinov", "Valhalla", 10005230);
 
-        List<Order>order = new ArrayList<>(10);
+        List<Order> order = new ArrayList<>(10);
         order.add(new Order(15, 200, Currency.USD, "Food", "BILLA", user1));
         order.add(new Order(74, 150, Currency.UAH, "Dwarf", "Store", user2));
         order.add(new Order(14, 800, Currency.USD, "Fig", "Furshet", user3));
@@ -32,6 +32,16 @@ public class Main {
         order.add(new Order(51, 30, Currency.UAH, "Cheese", "MilkFarm", user9));
         order.add(new Order(9, 700, Currency.USD, "TorqueTester", "Miller", user10));
 
-        System.out.println(order.sort(););
+        order.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                return o2.getPrice() - o1.getPrice();
+            }
+        });
+        System.out.println(order);
+
+        order.sort(new SortByPriceAndCity());
+        System.out.println(order);
+
     }
 }
