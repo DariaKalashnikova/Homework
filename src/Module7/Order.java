@@ -1,9 +1,7 @@
 package Module7;
 
 
-
-
-public class Order implements Comparable <Order> {
+public class Order implements Comparable<Order> {
 
     long id;
     int price;
@@ -89,4 +87,6 @@ public class Order implements Comparable <Order> {
     public int compareTo(Order o) {
         return o.getPrice() - this.getPrice();
     }
+
+
 }
