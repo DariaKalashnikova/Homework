@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -50,7 +51,9 @@ public class Main {
 
         System.out.println(MethodsUsed.price(order));
 
-        System.out.println(MethodsUsed.currency(order));
+        MethodsUsed.currency(order);
+
+        System.out.println(MethodsUsed.uniqueCities(order));
 
     }
 
