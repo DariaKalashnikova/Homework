@@ -1,13 +1,15 @@
 package Module7.Module5;
 
 
+import java.util.List;
+
 public interface DAO {
-    Room save(Room room);
+    List<Room> save(List<Room> room);
 
-    boolean delete(Room room);
+    boolean delete(List<Room> room);
 
-    Room update(Room room);
+    List<Room> update(List<Room> room);
 
-    Room findById(long id);
+    List<Room> findById(long id);
 
 }

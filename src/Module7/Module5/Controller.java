@@ -1,55 +1,56 @@
 package Module7.Module5;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controller {
 
-    API[] apis = new API[3];
+    List<API> apis = new ArrayList<>(3);
 
 
     public Controller() {
-        BookingComAPI bookingComAPI = new BookingComAPI();
-        apis[0] = bookingComAPI;
-        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
-        apis[1] = tripAdvisorAPI;
-        GoogleAPI googleAPI = new GoogleAPI();
-        apis[2] = googleAPI;
+        apis.add(new BookingComAPI());
+        apis.add(new TripAdvisorAPI());
+        apis.add(new GoogleAPI());
     }
 
-    Room[] requestRoom(int price, int persons, String hotelName, String cityName) {
-        Room[] bookingCom = apis[0].findRooms(price, persons, cityName, hotelName);
-        Room[] tripAdvisor = apis[1].findRooms(price, persons, cityName, hotelName);
-        Room[] google = apis[2].findRooms(price, persons, cityName, hotelName);
+    List<Room> requestRoom(int price, int persons, String hotelName, String cityName) {
+        List<Room> bookingCom = apis.get(0).findRooms(price, persons, cityName, hotelName);
+        List<Room> tripAdvisor = apis.get(1).findRooms(price, persons, cityName, hotelName);
+        List<Room> google = apis.get(2).findRooms(price, persons, cityName, hotelName);
 
-        Room rooms[] = new Room[bookingCom.length + tripAdvisor.length + google.length];
-        System.arraycopy(bookingCom, 0, rooms, 0, bookingCom.length);
-        System.arraycopy(tripAdvisor, 0, rooms, bookingCom.length, tripAdvisor.length);
-        System.arraycopy(google, 0, rooms, bookingCom.length + tripAdvisor.length, google.length);
+        List<Room> rooms = new ArrayList<>();
+        rooms.addAll(bookingCom);
+        rooms.addAll(bookingCom.size(), tripAdvisor);
+        rooms.addAll(tripAdvisor.size(), google);
 
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i] != null) {
-                System.out.println(rooms[i]);
+
+        for (int i = 0; i < rooms.size(); i++) {
+            if (rooms.get(i) != null) {
+                System.out.println(rooms.get(i));
             }
         }
         return rooms;
     }
 
-    public Room[] check(API api1, API api2) {
-        Room[] roomsApi1 = api1.getAll();
-        Room[] roomsApi2 = api2.getAll();
-        Room[] result = new Room[roomsApi1.length + roomsApi2.length];
+    public List <Room> check(API api1, API api2) {
+        List <Room> roomsApi1 = api1.getAll();
+        List<Room> roomsApi2 = api2.getAll();
+        List<Room> result = new ArrayList<>();
 
-        for (int i = 0; i < roomsApi1.length; i++) {
-            for (int k = 0; k < roomsApi2.length; k++) {
-                if (roomsApi1[i].equals(roomsApi2[k])) {
-                    result[i] = roomsApi1[i];
+        for (int i = 0; i < roomsApi1.size(); i++) {
+            for (int k = 0; k < roomsApi2.size(); k++) {
+                if (roomsApi1.get(i).equals(roomsApi2.get(k))) {
+                    result.add(roomsApi1.get(i));
                     i++;
                     k++;
                 }
             }
         }
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] != null) {
-                System.out.println(result[i]);
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i) != null) {
+                System.out.println(result.get(i));
             }
         }
         return result;

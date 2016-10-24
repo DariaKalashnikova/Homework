@@ -21,7 +21,7 @@ public class BookingComAPI implements API {
         Room roomFound = new Room(0, 0, 0, new Date(), cityName, hotelName);
         ArrayList<Room> found = new ArrayList<>();
         for (Room room : rooms) {
-            if (room.equals(roomFound) && room.getHotelName().equals(hotelName)) {
+            if (room.equals(roomFound) && room.getHotelName().equals(hotelName) && room.getCityName().equals(cityName)) {
                 found.add(room);
             }
         }
