@@ -33,6 +33,7 @@ public class Main2 {
 
         System.out.println(MethodsUsed.largestPrice(order));
 
-        System.out.println(MethodsUsed.deleteUsd(order, Currency.USD));
+        System.out.println(MethodsUsed.deleteUsd(order));
     }
+
 }

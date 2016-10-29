@@ -5,12 +5,12 @@ package Module9;
 
 public class Order implements Comparable<Order> {
 
-    long id;
-    int price;
-    Currency currency;
-    String itemName;
-    String shopIdentificator;
-    User user;
+    private long id;
+    private int price;
+    private Currency currency;
+    private String itemName;
+    private String shopIdentificator;
+    private User user;
 
     public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
         this.id = id;

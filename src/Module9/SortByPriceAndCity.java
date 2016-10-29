@@ -1,14 +1,12 @@
-package Module7;
+package Module9;
 
 
 import java.util.Comparator;
 
 public class SortByPriceAndCity implements Comparator<Order> {
-
-
     @Override
     public int compare(Order o1, Order o2) {
-        int compare = Integer.compare(o1.getPrice(), o2.getPrice());
+        int compare = o1.compareTo(o2);
         if (compare != 0) {
             return compare;
         }

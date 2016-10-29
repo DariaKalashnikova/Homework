@@ -34,5 +34,7 @@ public class Main {
 
         Collections.sort(order, (o1, o2) -> o2.compareTo(o1));
         System.out.println(order);
+
+        System.out.println(new SortByPriceAndCity());
     }
 }
