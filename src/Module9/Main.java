@@ -3,6 +3,7 @@ package Module9;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -35,6 +36,28 @@ public class Main {
         Collections.sort(order, (o1, o2) -> o2.compareTo(o1));
         System.out.println(order);
 
-        System.out.println(new SortByPriceAndCity());
+        Comparator<Order> comparatorPriceAndCity = (o1, o2)->{
+            int result = Integer.compare(o1.getPrice(), o2.getPrice());
+            if (result !=0){
+                return result;
+            }return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+        };
+        order.sort(comparatorPriceAndCity);
+        System.out.println(order);
+
+        Comparator<Order> comparatorItemShopIdAndCity = (o1, o2) -> {
+            int result = o1.getItemName().compareTo(o2.getItemName());
+            if (result !=0){
+                return result;
+            }result = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
+            if (result !=0){
+                return result;
+            }
+            return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+        };
+        order.sort(comparatorItemShopIdAndCity);
+        System.out.println(order);
+
+        
     }
 }
