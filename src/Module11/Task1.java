@@ -13,8 +13,7 @@ public class Task1 {
     public static void main(String[] args) throws IOException {
 
         Map<String, String> stringMap = new HashMap<>();
-        stringMap.put("Caterpillar", "Alice");
-        stringMap.put("Insect", "Human");
+        stringMap.put("Caterpillar", "Insect");
 
         BufferedReader br;
         try {
